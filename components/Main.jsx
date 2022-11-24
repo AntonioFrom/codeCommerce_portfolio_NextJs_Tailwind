@@ -1,9 +1,6 @@
+import Link from "next/link";
 import React from "react";
-import {
-  AiFillLinkedin,
-  AiFillGithub,
-  AiOutlineMail,
-} from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 
 export const Main = () => {
@@ -24,18 +21,32 @@ export const Main = () => {
             front-end web applications while learning back-end technologies.
           </p>
           <div className="flex items-center justify-center max-w-[330px] m-auto py-4">
-            <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-              <AiFillLinkedin />
-            </div>
-            <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-              <AiFillGithub />
-            </div>
-            <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-              <AiOutlineMail />
-            </div>
-            <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-              <BsFillPersonLinesFill />
-            </div>
+            <a
+              href="https://www.linkedin.com/in/anton-hai/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                <AiFillLinkedin />
+              </div>
+            </a>
+            <a href="https://github.com/AntonioFrom"
+              target="_blank"
+              rel="noreferrer">
+              <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                <AiFillGithub />
+              </div>
+            </a>
+            <Link href="/#contact">
+              <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                <AiOutlineMail />
+              </div>
+            </Link>
+            <Link href="/resume">
+              <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                <BsFillPersonLinesFill />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

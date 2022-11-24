@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Skills = () => {
   return (
-    <div className='w-full lg: h-screen p-2'>
+    <div id='skills' className='w-full lg:h-screen p-2'>
         <div className='flex max-w-[1240px] mx-auto flex-col justify-center h-full'>
             <p className='uppercase tracking-widest text-[#5651e5] text-xl'>Skills</p>
             <h2 className='py-4'>What I can do</h2>
@@ -11,7 +11,7 @@ export const Skills = () => {
 
                 <div className='p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300'>
                     <div className='grid grid-cols-2 gap-4 justify-center items-center'>
-                        <div className='m-auto'>
+                        <div className='m-auto '>
                             <Image
                             src="/assets/skills/html.png" alt='/'
                             width='64px'

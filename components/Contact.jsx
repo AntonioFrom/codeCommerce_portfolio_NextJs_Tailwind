@@ -1,17 +1,58 @@
-import React from "react";
+import React, { useState } from 'react';
+import Image from "next/image";
 import {
   AiFillLinkedin,
   AiFillGithub,
   AiOutlineMail,
-  AiOutlineArrowUp,
 } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Link from "next/link";
+import ContactImg from '../public/assets/contact.jpg';
 
 export const Contact = () => {
+  // const [name, setName] = useState('');
+  // const [phone, setPhone] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [subject, setSubject] = useState('');
+  // const [message, setMessage] = useState('');
+  const [query, setQuery] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: ""
+  })
+  const handleParam = () => (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setQuery((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+  const formSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    Object.entries(query).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+    fetch("https://getform.io/f/c865b36c-46e9-49aa-ae18-5280581571ff", {
+      method: "POST",
+      body: formData
+    }).then(() => setQuery({ name: "", email: "", message: "", phone: "", subject: "" }));
+  };
+  // const handleSubmit = () => {
+  //   setName('');
+  //   setPhone('');
+  //   setEmail('');
+  //   setSubject('');
+  //   setMessage('');
+  // };
+
+  // console.log(name, phone)
   return (
-    <div className="w-full lg:h-screen">
+    <div id="contact" className="w-full lg:h-screen">
       <div className="m-auto max-w-[1240px] px-2 py-16 w-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Contact
@@ -22,13 +63,15 @@ export const Contact = () => {
             <div className="h-full lg:p-4">
               {/* left */}
               <div>
-                <img
+                <Image
                   className="rounded-xl hover:scale-105 ease-in duration-300"
-                  src="assets/contact.jpg"
+                  src={ContactImg}
+                 
+                  objectFit="cover"
                 />
               </div>
               <div>
-                <h2 className="py-2">Name here</h2>
+                <h2 className="py-2">Hai Anton</h2>
                 <p>Front-End developer</p>
                 <p className="py-4">
                   I am availble for freelance or full-time position. Contact me
@@ -38,18 +81,29 @@ export const Contact = () => {
               <div>
                 <p className="uppercase pt-8">Connect with me</p>
                 <div className="flex items-center justify-between py-4">
+                <a
+                    href='https://www.linkedin.com/in/anton-hai/'
+                    target='_blank'
+                  >
                   <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                     <AiFillLinkedin />
-                  </div>
+                  </div></a>
+                  <a
+                    href='https://github.com/AntonioFrom'
+                    target='_blank'
+                  >
                   <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                     <AiFillGithub />
-                  </div>
+                  </div></a>
                   <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                     <AiOutlineMail />
                   </div>
+                  <Link href="/resume">
+                  
                   <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                     <BsFillPersonLinesFill />
                   </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -57,13 +111,18 @@ export const Contact = () => {
           {/* right */}
           <div className="col-span-3 w-full h-auto shadow-xl stroke-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form>
+              <form  onSubmit={formSubmit}
+               >
+
                 <div className=" grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className=" uppercase text-sm py-2">Name</label>
                     <input
                       className=" border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
+                      name='name'
+                      value={query.name}
+                      onChange={handleParam()}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -73,6 +132,9 @@ export const Contact = () => {
                     <input
                       className=" border-2 rounded-lg p-3 flex border-gray-300"
                       type="phone"
+                      name='phone'
+                      value={query.phone}
+                      onChange={handleParam()}
                     />
                   </div>
                 </div>
@@ -81,6 +143,9 @@ export const Contact = () => {
                   <input
                     className=" border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
+                    name='email'
+                    value={query.email}
+                    onChange={handleParam()}
                   />
                 </div>
                 <div className=" flex flex-col py-2">
@@ -88,16 +153,22 @@ export const Contact = () => {
                   <input
                     className=" border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
+                    name='subject'
+                    value={query.subject}
+                    onChange={handleParam()}
                   />
                 </div>
                 <div className=" flex flex-col py-2">
                   <label className=" uppercase text-sm py-2">Message</label>
                   <textarea
-                    className=" border-2 rounded-lg p-3 border-gray-300"
-                    rows={10}
+                     className='border-2 rounded-lg p-3 border-gray-300'
+                     rows='10'
+                     name='message'
+                     value={query.message}
+                     onChange={handleParam()}
                   ></textarea>
                 </div>
-                <button className=" w-full text-gray-100 mt-4 p-2">
+                <button  className=" w-full text-gray-100 mt-4 p-2">
                   Send Message
                 </button>
               </form>
