@@ -9,15 +9,16 @@ export const Main = () => {
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
           <p className="uppercase text-sm tracking-widest to-gray-600">
-            Let's build something together
+            Let&apos;s build something together
           </p>
           <h1 className="py-4 to-gray-700">
-            Hi, I'm <span className="text-[#5651e5] uppercase">Anton </span>
+            Hi, I&apos;m{" "}
+            <span className="text-[#5651e5] uppercase">Anton </span>
           </h1>
           <h1 className="py-4 to-gray-700 ">A Front-End Web Developer</h1>
           <p className=" p-4 to-gray-600 max-w-[70%] m-auto">
-            I'm front-end web developer specializing in build exceptional
-            digital experiences. Currently, i'm focused on build responsive
+            I&apos;m front-end web developer specializing in build exceptional
+            digital experiences. Currently, i&apos;m focused on build responsive
             front-end web applications while learning back-end technologies.
           </p>
           <div className="flex items-center justify-center max-w-[330px] m-auto py-4">
@@ -30,9 +31,11 @@ export const Main = () => {
                 <AiFillLinkedin />
               </div>
             </a>
-            <a href="https://github.com/AntonioFrom"
+            <a
+              href="https://github.com/AntonioFrom"
               target="_blank"
-              rel="noreferrer">
+              rel="noreferrer"
+            >
               <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                 <AiFillGithub />
               </div>

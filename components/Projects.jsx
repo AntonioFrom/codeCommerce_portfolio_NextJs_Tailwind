@@ -14,12 +14,28 @@ export const Projects = () => {
         <p className="uppercase tracking-widest text-[#5651e5] text-xl">
           Projects
         </p>
-        <h2 className="py-4">What I've Built</h2>
+        <h2 className="py-4">What I&apos;ve Built</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          <ProjectItem title='Property Finder' backgroundImage={projectImg1} projectURL="/property/"/>
-          <ProjectItem title='Crypto App' backgroundImage={projectImg2} projectURL="/crypto/"/>
-          <ProjectItem title='Netflix App' backgroundImage={projectImg3} projectURL="/netflix/"/>
-          <ProjectItem title='Twitch App' backgroundImage={projectImg4} projectURL="/twitch/"/>
+          <ProjectItem
+            title="Property Finder"
+            backgroundImage={projectImg1}
+            projectURL="/property/"
+          />
+          <ProjectItem
+            title="Crypto App"
+            backgroundImage={projectImg2}
+            projectURL="/crypto/"
+          />
+          <ProjectItem
+            title="Netflix App"
+            backgroundImage={projectImg3}
+            projectURL="/netflix/"
+          />
+          <ProjectItem
+            title="Twitch App"
+            backgroundImage={projectImg4}
+            projectURL="/twitch/"
+          />
         </div>
       </div>
     </div>
