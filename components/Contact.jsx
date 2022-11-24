@@ -65,6 +65,7 @@ export const Contact = () => {
                   className="rounded-xl hover:scale-105 ease-in duration-300"
                   src={ContactImg}
                   objectFit="cover"
+                  alt="/"
                 />
               </div>
               <div>
