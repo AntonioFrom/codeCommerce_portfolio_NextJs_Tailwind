@@ -81,12 +81,13 @@ export const Contact = () => {
                   <a
                     href="https://www.linkedin.com/in/anton-hai/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <AiFillLinkedin />
                     </div>
                   </a>
-                  <a href="https://github.com/AntonioFrom" target="_blank">
+                  <a href="https://github.com/AntonioFrom" target="_blank" rel="noreferrer">
                     <div className="rounded-full shadow-lg stroke-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                       <AiFillGithub />
                     </div>

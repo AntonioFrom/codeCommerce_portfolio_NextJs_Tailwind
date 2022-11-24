@@ -14,7 +14,7 @@ export const About = () => {
             my life and become a web developer.
           </p>
           <p className="py-2 to-gray-600">
-            "Starting life from scratch" is a very romanticized concept, but in
+          &ldquo;Starting life from scratch&ldquo; is a very romanticized concept, but in
             fact, I had to put in a lot of effort to achieve the result. If you
             choose me as a programmer for your project or company, you will get
             an employee who knows how to achieve goals, is easily trained, has
