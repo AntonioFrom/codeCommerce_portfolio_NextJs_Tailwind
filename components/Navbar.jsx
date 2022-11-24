@@ -10,7 +10,7 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import navLogo from "../public/assets/navLogo.png"
+import navLogo from "../public/assets/navLogo.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -93,12 +93,14 @@ const Navbar = () => {
               </li>
             </Link>
             <Link href="/resume">
-            <li className='ml-10 text-sm uppercase hover:border-b'>
-                Resume
-              </li>
+              <li className="ml-10 text-sm uppercase hover:border-b">Resume</li>
             </Link>
           </ul>
-          <div onClick={handleNav} className="md:hidden"  style={{ color: `${linkColor}`}}>
+          <div
+            onClick={handleNav}
+            className="md:hidden"
+            style={{ color: `${linkColor}` }}
+          >
             <AiOutlineMenu size={25} />
           </div>
         </div>
@@ -118,12 +120,7 @@ const Navbar = () => {
           <div>
             <div className="flex justify-between items-center w-full ">
               <Link href="/">
-                <Image
-                  src={navLogo}
-                  alt="/"
-                  width="87"
-                  height="35"
-                />
+                <Image src={navLogo} alt="/" width="87" height="35" />
               </Link>
               <div
                 onClick={handleNav}
@@ -166,7 +163,7 @@ const Navbar = () => {
             </ul>
             <div className="pt-40">
               <p className="uppercase tracking-widest text-[#5651e5]">
-                Let's connect
+                Let&apos;s connect
               </p>
               <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                 <a
@@ -188,13 +185,21 @@ const Navbar = () => {
                   </div>
                 </a>
                 <Link href="/#contact">
-                <div onClick={() => setNav(!nav)} className="rounded-full shadow-lg stroke-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <AiOutlineMail />
-                </div></Link>
+                  <div
+                    onClick={() => setNav(!nav)}
+                    className="rounded-full shadow-lg stroke-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
+                  >
+                    <AiOutlineMail />
+                  </div>
+                </Link>
                 <Link href="/resume">
-                <div onClick={() => setNav(!nav)} className="rounded-full shadow-lg stroke-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                  <BsFillPersonLinesFill />
-                </div></Link>
+                  <div
+                    onClick={() => setNav(!nav)}
+                    className="rounded-full shadow-lg stroke-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
+                  >
+                    <BsFillPersonLinesFill />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

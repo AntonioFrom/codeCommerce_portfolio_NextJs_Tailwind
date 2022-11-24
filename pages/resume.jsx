@@ -130,7 +130,7 @@ const resume = () => {
           <ul className='list-disc list-outside px-7 py-1 leading-relaxed'>
             <li>
               In 2021 I started “Code Commerce”, a YouTube channel focused on
-              sharing what I’m learning in web development, specifically
+              sharing what I&apos;m learning in web development, specifically
               front-end development.
             </li>
             <li>
