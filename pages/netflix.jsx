@@ -35,8 +35,18 @@ import Link from "next/link";
             useContext hook is also being implemented for app-wide state
             management.
             </p>
+            <a href="https://code-commerce-netflix-react-tailw-fireb-8v73pwa6n-antoniofrom.vercel.app/"
+            target="_blank"
+            rel="noreferrer">
+
             <button className=" px-8 py-2 mt-4 mr-8  ">Demo</button>
+            </a>
+            <a href="https://github.com/AntonioFrom/code_commerce_netflix_react_tailw_fireb"
+            target="_blank"
+            rel="noreferrer">
+
             <button className=" px-8 py-2 mt-4 ">Code</button>
+            </a>
         </div>
         <div className=" col-span-4 md:col-span-1 shadow-xl stroke-gray-400">
             <div className=" p-2">
